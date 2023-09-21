@@ -8,7 +8,7 @@
       </template>
       <template v-else-if="currentRouteName">
         <span class="hidden md:block mx-auto text-red-600 text-2xl container">
-          > {{ $t(currentRouteName) }}
+          > {{ $t(currentRouteName as string) }}
         </span>
       </template>
     </template>
@@ -21,7 +21,7 @@
       </template>
       <template v-else-if="currentRouteName">
         <span class="block md:hidden mx-auto text-2xl container">
-          > {{ $t(currentRouteName) }}
+          > {{ $t(route.name as string) }}
         </span>
       </template>
     </template>

@@ -43,7 +43,7 @@ import ThePopover from "./ThePopover.vue";
 
 const t = useI18n();
 
-const changeLanguage = (lng) => {
+const changeLanguage = (lng: string) => {
   t.locale.value = lng.toLocaleUpperCase();
 };
 </script>
