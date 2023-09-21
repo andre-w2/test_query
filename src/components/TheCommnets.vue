@@ -16,7 +16,11 @@
 defineProps({
     comments: {
         required: true,
-        type: Object
+        type: Object,
+        default: () => {},
+        validator: (e) => {
+          return typeof e === 'object'
+        }
     }
 })
 </script>

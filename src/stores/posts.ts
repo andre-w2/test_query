@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import apiPosts from '../api/posts'
 import IPosts from '../types/posts'
 import { getItem, setItem } from '../utils/storage'
+import { LIMIT } from '../utils/const'
 
 export const KEY_POSTS = 'posts'
 export const TIME_CACHE = 'TIME_CACHE'
@@ -28,7 +29,7 @@ export const usePostsStore = defineStore('posts', () => {
             isLoading.value = true
         } else {
             return new Promise(() => {
-                apiPosts.posts(`_page=${page}&_limit=4`)
+                apiPosts.posts(`_page=${page}&_limit=${LIMIT}`)
                     .then((res) => {
                         const postsData = res.data;
                         const requests: any = [];
